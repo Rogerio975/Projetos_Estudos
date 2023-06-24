@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Descobrindo a tecla com Javascript</title>
+</head>
+<body>
+  <div>
+  <h1>Aperte a tecla Espaço</h1>
+    <input type="text" onkeyup="teclaPressionada(event)">
+  </div>
+  <hr>
+  <div>
+    <h2>Qual tecla eu apertei?</h2>
+    <input type="text" id="tecla" onkeypress="qualtecla(event)">
+    <p id="res"></p>
+  </div>
+</body>
+<script>
+  function teclaPressionada(event) {
+    if(event.keyCode == 32){
+      alert("Você pressionou a tecla Espaço");
+      return false;
+    }
+  }
+
+function qualtecla(event) {
+  document.getElementById("res").innerText = 'Tecla: ' + event.key + '\n' + 'keyCode: ' + event.keyCode;
+}
+</script>
+</html>  
